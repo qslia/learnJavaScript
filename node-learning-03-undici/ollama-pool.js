@@ -22,11 +22,34 @@ async function streamOllamaCompletion(prompt) {
 
   let partial = "";
   const decoder = new TextDecoder();
+  let fullText = "";
 
   for await (const chunk of body) {
     partial += decoder.decode(chunk, { stream: true });
-    console.log(partial);
+    
+    // Split by newlines to get complete JSON objects
+    const lines = partial.split("\n");
+    
+    // Keep the last incomplete line in partial
+    partial = lines.pop() || "";
+    
+    // Process each complete line
+    for (const line of lines) {
+      if (line.trim()) {
+        try {
+          const parsed = JSON.parse(line);
+          if (parsed.response) {
+            fullText += parsed.response;
+            process.stdout.write(parsed.response); // Print token without newline
+          }
+        } catch (err) {
+          console.error("Failed to parse JSON:", line);
+        }
+      }
+    }
   }
+
+  console.log("\n\nFull response:", fullText);
 
   console.log("Streaming complete.");
 }
