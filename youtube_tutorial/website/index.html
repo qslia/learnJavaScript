@@ -7,20 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="checkbox" id="myCheckbox">
-    <label for="myCheckbox">subscribe</label><br><br>
-
-    <input type="radio" id="visaBtn" name="card">
-    <label for="visaBtn">Visa</label><br>
-    <input type="radio" id="masterCardBtn" name="card">
-    <label for="masterCardBtn">MasterCard</label><br>
-    <input type="radio" id="paypalBtn" name="card">
-    <label for="paypalBtn">Paypal</label><br>
-
-    <button type="submit" id="mySubmit">submit</button>
-
-    <p id="subResult"></p>
-    <p id="paymentResult"></p>
+    
+    <form>
+        <h1>Temperature Converter:</h1>
+        <input type="number" id="textBox" value="0"><br>
+        <input type="radio" id="toFahrenheit" name="unit">
+        <label for="toFahrenheit">Celsius → Fahrenheit</label><br>
+        <input type="radio" id="toCelsius" name="unit">
+        <label for="toCelsius">Fahrenheit → Celsius</label><br>
+        <button type="button" id="myButton" onclick="convert()">submit</button>
+        <p id="result"></p>
+    </form>
     <script src="index.js"></script>
 </body>
 </html>
