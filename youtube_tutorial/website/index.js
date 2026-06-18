@@ -1,33 +1,31 @@
-//  let numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
 
-//  numbers.forEach(square)
-//  numbers.forEach(display);
+// const squares = numbers.map(square)
 
-//  function double(element, index, array) {
-//     array[index] = element * 2;
-//  }
+// console.log(squares);
 
-//  function triple(element, index, array) {
-//     array[index] = element * 3;
-//  }
-
-// function square(element, index, array) {
-//     array[index] = Math.pow(element, 2)
+// function square(element) {
+//     return Math.pow(element, 2);
 // }
 
-//  function display(element) {
-//     console.log(element);
-//  }
+// const students = ["Spongebob", "Patrick", "Squidward", "Sandy"];
+// const studentsUpper = students.map(upperCase);
 
-let fruits = ["apple", "orange", "banana", "coconut"];
+// console.log(studentsUpper)
 
-fruits.forEach(upperCase);
-fruits.forEach(display);
+// function upperCase(element) {
+//     return element.toUpperCase();
+// }
 
-function upperCase(element, index, array) {
-    array[index] = element.toUpperCase();
+const dates = ["2024-1-10", "2025-2-20", "2026-3-30"];
+const formattedDates = dates.map(formatDates);
+
+console.log(formattedDates);
+
+function formatDates(element) {
+    const parts = element.split("-");
+    return `${parts[1]}/${parts[2]}/${parts[0]}`
 }
 
-function display(element) {
-    console.log(element);
-}
+
+
