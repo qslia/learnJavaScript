@@ -1,47 +1,30 @@
-function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
-    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-    const uppercaseChars = lowercaseChars.toUpperCase();
-    const numberChars = "0123456789";
-    const symbolChars = "!@#$%^&*()-_=+";
+// hello(leave);
 
-    let allowedChars = "";
-    let password = "";
+// function hello(callback) {
+//     console.log("hello");
+//     callback();
 
-    allowedChars += includeLowercase ? lowercaseChars : "";
-    allowedChars += includeUppercase ? uppercaseChars : "";
-    allowedChars += includeNumbers ? numberChars : "";
-    allowedChars += includeSymbols ? symbolChars : "";
+// }
 
-    if (length <= 0) {
-        return `(password length must be at least 1)`;
-    }
-    if (allowedChars.length === 0) {
-        return `(At least 1 set of character needs to be selected)`
-    }
+// function leave() {
+//     console.log("Leave!");
+// }
 
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * allowedChars.length)
-        password += allowedChars[randomIndex];
-    }
+// function goodbye() {
+//     console.log("goodbye!");
+// }
 
-    return password;
+sum(displayPage, 1 , 2);
+
+function sum(callback, x, y) {
+    let result = x + y;
+    callback(result);
 }
 
-const passwordLength = 10;
-const includeLowercase = true;
-const includeUppercase = true;
-const includeNumbers = true;
-const includeSymbols = true;
+function displayConsole(result) {
+    console.log(result);
+}
 
-const password = generatePassword(
-    passwordLength,
-    includeLowercase,
-    includeUppercase,
-    includeNumbers,
-    includeSymbols
-);
-
-console.log(`Generated password: ${password}`);
-
-
-
+function displayPage(result) {
+    document.getElementById("myH1").textContent = result;
+}
