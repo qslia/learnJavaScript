@@ -1,30 +1,33 @@
-// hello(leave);
+//  let numbers = [1, 2, 3, 4, 5];
 
-// function hello(callback) {
-//     console.log("hello");
-//     callback();
+//  numbers.forEach(square)
+//  numbers.forEach(display);
 
+//  function double(element, index, array) {
+//     array[index] = element * 2;
+//  }
+
+//  function triple(element, index, array) {
+//     array[index] = element * 3;
+//  }
+
+// function square(element, index, array) {
+//     array[index] = Math.pow(element, 2)
 // }
 
-// function leave() {
-//     console.log("Leave!");
-// }
+//  function display(element) {
+//     console.log(element);
+//  }
 
-// function goodbye() {
-//     console.log("goodbye!");
-// }
+let fruits = ["apple", "orange", "banana", "coconut"];
 
-sum(displayPage, 1 , 2);
+fruits.forEach(upperCase);
+fruits.forEach(display);
 
-function sum(callback, x, y) {
-    let result = x + y;
-    callback(result);
+function upperCase(element, index, array) {
+    array[index] = element.toUpperCase();
 }
 
-function displayConsole(result) {
-    console.log(result);
-}
-
-function displayPage(result) {
-    document.getElementById("myH1").textContent = result;
+function display(element) {
+    console.log(element);
 }
