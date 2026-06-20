@@ -1,34 +1,20 @@
-// let numbers = [1, 2, 3, 4, 5, 6, 7];
-// let evenNums = numbers.filter(isOdd);
+// const prices = [5, 30, 10, 25, 15, 20];
+// const total = prices.reduce(sum);
 
-// console.log(evenNums);
+// console.log(`$${total.toFixed(2)}`);
 
-// function isEven(element) {
-//     return element % 2 === 0;
+// function sum(accumulator, element) {
+//     return accumulator + element;
 // }
 
-// function isOdd(element) {
-//     return element % 2 !== 0;
-// }
+const grades = [75, 50, 90, 80, 65, 95];
+const maximum = grades.reduce(getMax);
 
-// const ages = [16, 17, 18, 19, 20, 60];
-// const adults = ages.filter(isAdult);
+console.log(maximum)
 
-// console.log(adults);
-
-// function isAdult(element) {
-//     return element >= 18;
-// }
-
-const words = ["apple", "orange", "banana", "kiwiqwwewew"];
-const shortWords = words.filter(getShortWords);
-
-console.log(shortWords);
-
-function getShortWords(element) {
-    return element.length <= 6;
+function getMax(accumulator, element) {
+    return Math.max(accumulator, element);
 }
-
 
 
 
