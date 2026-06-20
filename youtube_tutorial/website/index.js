@@ -1,31 +1,36 @@
-// const numbers = [1, 2, 3, 4, 5];
+// let numbers = [1, 2, 3, 4, 5, 6, 7];
+// let evenNums = numbers.filter(isOdd);
 
-// const squares = numbers.map(square)
+// console.log(evenNums);
 
-// console.log(squares);
-
-// function square(element) {
-//     return Math.pow(element, 2);
+// function isEven(element) {
+//     return element % 2 === 0;
 // }
 
-// const students = ["Spongebob", "Patrick", "Squidward", "Sandy"];
-// const studentsUpper = students.map(upperCase);
-
-// console.log(studentsUpper)
-
-// function upperCase(element) {
-//     return element.toUpperCase();
+// function isOdd(element) {
+//     return element % 2 !== 0;
 // }
 
-const dates = ["2024-1-10", "2025-2-20", "2026-3-30"];
-const formattedDates = dates.map(formatDates);
+// const ages = [16, 17, 18, 19, 20, 60];
+// const adults = ages.filter(isAdult);
 
-console.log(formattedDates);
+// console.log(adults);
 
-function formatDates(element) {
-    const parts = element.split("-");
-    return `${parts[1]}/${parts[2]}/${parts[0]}`
+// function isAdult(element) {
+//     return element >= 18;
+// }
+
+const words = ["apple", "orange", "banana", "kiwiqwwewew"];
+const shortWords = words.filter(getShortWords);
+
+console.log(shortWords);
+
+function getShortWords(element) {
+    return element.length <= 6;
 }
+
+
+
 
 
 
