@@ -1,40 +1,55 @@
 class Animal {
-    alive = true;
-
-    eat() {
-        console.log(`This ${this.name} is eating`);
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
-    sleep() {
-        console.log(`This ${this.name} is sleeping`);
+
+    move(speed) {
+        console.log(`The ${this.name} moves at a speed of ${speed} mph.`);
     }
 }
 
 class Rabbit extends Animal {
-    name = "rabbit";
-    run() {
-        console.log(`This ${this.name} is running`);
+    constructor(name, age, runSpeed) {
+        super(name, age);
+        this.runSpeed = runSpeed;
     }
-
+    run() {
+        console.log(`This ${this.name} can run`);
+        super.move(this.runSpeed)
+    }
 }
 class Fish extends Animal {
-    name = "fish";
+    constructor(name, age, swimSpeed) {
+        super(name, age);
+        this.swimSpeed = swimSpeed;
+    }
     swim() {
-        console.log(`This ${this.name} is swimming`);
+        console.log(`This ${this.name} can swim`);
+        super.move(this.swimSpeed)
     }
 }
 
 class Hawk extends Animal {
-    name = "hawk";
-    fly() {
-        console.log(`This ${this.name} is flying`);
+    constructor(name, age, flySpeed) {
+        super(name, age);
+        this.flySpeed = flySpeed;
     }
+
+    fly() {
+        console.log(`This ${this.name} can fly`);
+        super.move(this.flySpeed)
+    }
+
 }
 
-const rabbit = new Rabbit()
-const fish = new Fish()
-const hawk = new Hawk()
+const rabbit = new Rabbit("rabbit", 1, 25);
+const fish = new Fish("fish", 2, 12);
+const hawk = new Hawk("hawk", 3, 50);
 
-console.log(hawk.alive);
-hawk.eat()
-hawk.sleep()
-hawk.fly()
+console.log(rabbit.name);
+console.log(rabbit.age)
+console.log(rabbit.runSpeed)
+rabbit.run();
+fish.swim();
+hawk.fly();
