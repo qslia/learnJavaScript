@@ -1,81 +1,66 @@
-// class Rectangle {
+// let a = 1;
+// let b = 2;
 
-//     constructor(width, height) {
-//         this.width = width;
-//         this.height = height;
-//     }
+// [a, b] = [b, a];
 
-//     set width(newWidth) {
-//         if (newWidth > 0) {
-//             this._width = newWidth;
-//         } else {
-//             console.error("Width must be a positive number.")
-//         }
-//     }
+// console.log(a);
+// console.log(b);
 
-//     set height(newHeight) {
-//         if (newHeight > 0) {
-//             this._height = newHeight;
-//         } else {
-//             console.error("Height must be a positive number.")
-//         }
-//     }
+// const colors = ["red", "green", "blue", "black", "white"];
 
-//      get Width() {
-//         return `${this._width.toFixed(1)} cm`;
-//      }
+// [colors[0], colors[4]] = [colors[4], colors[0]];
 
-//      get Height() {
-//         return `${this._height} cm`;
-//      }
+// console.log(colors)
 
-//      get area() {
-//         return `${(this._width * this._height).toFixed(1)} cm^2`;
-//      }
+// const [firstColor, secondColor, thirdColor, ...extra] = colors;
+
+// console.log(firstColor);
+// console.log(secondColor);
+// console.log(thirdColor);
+// console.log(extra)
+
+// const person1 = {
+//     firstName: "SpongeBob",
+//     lastName: "SquarePants",
+//     age: 30,
+//     job: "Fry Cook",
+
 // }
 
-// const rectangle = new Rectangle(3, 4)
+// const {firstName, lastName, age, job} = person1;
 
-// rectangle.width = -100;
-// rectangle.height = "pizza";
-
-// console.log(rectangle.Width);
-// console.log(rectangle.Height);
-// console.log(rectangle.area)
+// console.log(firstName);
+// console.log(lastName);
+// console.log(age);
+// console.log(job);
 
 
-class Person {
-    constructor(firstName, lastName, age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-    }
-    set firstName(newFirstName) {
-        if (typeof newFirstName === "string" && newFirstName.length > 0) {
-            this._firstName = newFirstName;
-        } else {
-            console.error("First name must be a non-empty string");
-        }
-    }
+// const person2 = {
+//     firstName: "SpongeBob2",
+//     lastName: "SquarePants2",
+//     age: 31,
 
-    set age(newAge) {
-        if (typeof newAge === "number" && newAge >= 0) {
-            this._age = newAge;
-        } else {
-            console.error("Age must be a non-negative number");
-        }
-    }
-    get firstName() {
-        return this._firstName;
-    }
+// }
 
-    get age() {
-        return this._age;
-    }
+// const {firstName, lastName, age, job="Unemployed"} = person2;
+
+// console.log(firstName);
+// console.log(lastName);
+// console.log(age);
+// console.log(job);
+
+
+const person1 = {
+    firstName: "SpongeBob",
+    lastName: "SquarePants",
+    age: 30,
+    job: "Fry Cook",
+
+}
+function displayPerson({firstName, lastName, age, job}) {
+    console.log(`name : ${firstName} ${lastName}`);
+    console.log(`age: ${age}`);
+    console.log(`job ${job}`);
 }
 
-const person = new Person('barry', "allen", 12);
-
-console.log(person.firstName);
-console.log(person.lastName);
-console.log(person.age);
+displayPerson(person1)
