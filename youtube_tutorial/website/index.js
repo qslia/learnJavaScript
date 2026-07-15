@@ -1,66 +1,43 @@
-// let a = 1;
-// let b = 2;
-
-// [a, b] = [b, a];
-
-// console.log(a);
-// console.log(b);
-
-// const colors = ["red", "green", "blue", "black", "white"];
-
-// [colors[0], colors[4]] = [colors[4], colors[0]];
-
-// console.log(colors)
-
-// const [firstColor, secondColor, thirdColor, ...extra] = colors;
-
-// console.log(firstColor);
-// console.log(secondColor);
-// console.log(thirdColor);
-// console.log(extra)
-
-// const person1 = {
-//     firstName: "SpongeBob",
-//     lastName: "SquarePants",
+// const person = {
+//     fullName: "Spongebob Squarepants",
 //     age: 30,
-//     job: "Fry Cook",
-
+//     isStudent: true,
+//     hobbies: ['karate', 'jellyfishing', 'cooking'],
+//     address: {
+//         street: "124 Conch St.",
+//         city: "Bikini Bottom",
+//         country: "Int. Water"
+//     }
 // }
 
-// const {firstName, lastName, age, job} = person1;
+// console.log(person.fullName);
+// console.log(person.age);
+// console.log(person.isStudent);
+// console.log(person.address.city);
 
-// console.log(firstName);
-// console.log(lastName);
-// console.log(age);
-// console.log(job);
-
-
-// const person2 = {
-//     firstName: "SpongeBob2",
-//     lastName: "SquarePants2",
-//     age: 31,
-
+// for (const property in person.address) {
+//     console.log(person.address[property])
 // }
 
-// const {firstName, lastName, age, job="Unemployed"} = person2;
-
-// console.log(firstName);
-// console.log(lastName);
-// console.log(age);
-// console.log(job);
-
-
-const person1 = {
-    firstName: "SpongeBob",
-    lastName: "SquarePants",
-    age: 30,
-    job: "Fry Cook",
-
-}
-function displayPerson({firstName, lastName, age, job}) {
-    console.log(`name : ${firstName} ${lastName}`);
-    console.log(`age: ${age}`);
-    console.log(`job ${job}`);
+class Person {
+    constructor(name, age, ...address) {
+        this.name = name;
+        this.age = age;
+        this.address = new Address(...address);
+    }
 }
 
-displayPerson(person1)
+class Address {
+    constructor(street, city, country) {
+        this.street = street;
+        this.city = city;
+        this.country = country;
+    }
+}
+
+const person1 = new Person("Spongebob", 30, "124 Conh St.", "a", "b");
+const person2 = new Person("Patrick", 12, "srere", "c", "d");
+const person3 = new Person("Patrick", 12, "sr232e", "f", "g");
+
+console.log(person1.address.city)
+console.log(person2.address.city)
