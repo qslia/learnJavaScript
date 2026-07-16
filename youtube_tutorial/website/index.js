@@ -1,13 +1,28 @@
-const cards = ['A', 2, 3, 4, 5, 'J', 'Q', 'K'];
-// cards.sort(() => Math.random() - 0.5);
+// const date = new Date();
 
-shuffle(cards);
-console.log(cards);
+// console.log(date);
 
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const random = Math.floor(Math.random() * (i + 1));
-        [array[i], array[random]] = [array[random], array[i]];
-    }
-}
+// const date = new Date(2024, 0, 1, 2, 3, 4);
+
+// console.log(date);
+
+// const date = new Date(0);
+
+// console.log(date);
+
+// const date = new Date("2025-01-02 11:22:32");
+
+// console.log(date);
+
+const date = new Date();
+
+const year = date.getFullYear();
+const month = date.getMonth();
+const day = date.getDate();
+const hour = date.getHours();
+
+console.log(year);
+console.log(month);
+console.log(day);
+console.log(hour)
 
