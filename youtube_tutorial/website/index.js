@@ -1,28 +1,93 @@
-// const date = new Date();
+// function outer() {
+//     let message = "Hello";
+//     function inner() {
+//         console.log(message);
+//     }
+//     inner();
+// }
 
-// console.log(date);
+// message = "goodbye";
+// outer()
 
-// const date = new Date(2024, 0, 1, 2, 3, 4);
 
-// console.log(date);
+// function increment() {
+//     let count = 0;
+//     count++;
+//     console.log(`Count increased to ${count}`);
+// }
+// increment();
+// increment();
+// increment();
 
-// const date = new Date(0);
 
-// console.log(date);
+// function createCounter() {
+//     let count = 0;
 
-// const date = new Date("2025-01-02 11:22:32");
+//     function increment() {
+//         count++;
+//         console.log(`Count increased to ${count}`);
+//     }
 
-// console.log(date);
+//     function getCount() {
+//         return count;
+//     }
+//     return {increment, getCount};
+// }
 
-const date = new Date();
+// const counter = createCounter();
+// counter.increment();
+// counter.increment();
+// counter.increment();
+// counter.increment();
 
-const year = date.getFullYear();
-const month = date.getMonth();
-const day = date.getDate();
-const hour = date.getHours();
+// console.log(counter.count)
+// console.log(`The current count is ${counter.getCount()}`)
 
-console.log(year);
-console.log(month);
-console.log(day);
-console.log(hour)
 
+let score = 0;
+
+function increaseScore(points) {
+    score += points;
+    console.log(`+${points}pts`);
+}
+
+function decreaseScore(points) {
+    score -= points;
+    console.log(`-${points}pts`);
+}
+
+function getScore() {
+    return score;
+}
+score = 10;
+increaseScore(5);
+increaseScore(6);
+
+console.log(`The final score is ${getScore()}pts`)
+
+
+function createGame() {
+    let score = 0;
+
+    function increaseScore(points) {
+        score += points;
+        console.log(`+${points}pts`);
+    }
+
+    function decreaseScore(points) {
+        score -= points;
+        console.log(`-${points}pts`);
+    }
+
+    function getScore() {
+        return score;
+    }
+
+    return {increaseScore, decreaseScore, getScore};
+}
+const game = createGame();
+
+game.increaseScore(5);
+game.increaseScore(6);
+
+console.log(`The final score is ${game.getScore()}pts`)
