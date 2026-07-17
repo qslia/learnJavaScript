@@ -7,8 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onclick="startTimer()">START</button>
-    <button onclick="clearTimer()">CLEAR</button>
+    <h1>Interest Calculator</h1>
+    <form>
+        
+        <label for="principal">Principal Amount</label>  <!--用户点击 "Principal Amount" 这几个字时，光标会自动跳转到输入框中-->
+        <input type="number", id="principal">
+        
+        <label for="rate">Interest Rate:</label>  <!--用户点击 "Principal Amount" 这几个字时，光标会自动跳转到输入框中-->
+        <input type="number", id="rate">
+        
+        <label for="years">Years:</label>  <!--用户点击 "Principal Amount" 这几个字时，光标会自动跳转到输入框中-->
+        <input type="number", id="years">
+
+        <button type="button" onclick="calculate()">submit</button>
+        <!--type="button"	普通按钮	点击后没有任何默认行为，只执行你指定的 JavaScript
+        type="submit"	提交按钮	点击后提交表单数据到服务器（会刷新页面）
+        type="reset"	重置按钮	点击后清空/重置表单内所有输入框的内容
+        在 <form> 内部，默认是 type="submit"！
+        -->
+
+        <p id="total">Total:<span id="total-amount">$0.00</span> </p>
+        <!--<span> 是 HTML 中的行内容器元素，用于包裹一小段文本或内容，方便通过 CSS 或 JavaScript 单独控制它。-->
+    </form>
+
     <script src="index.js"></script>
 </body>
 </html>
