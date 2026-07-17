@@ -1,21 +1,21 @@
-// function sayHello() {
-//     window.alert("hello")
+// console.time("test");
+
+// for(let i = 0; i < 100000000; i++) {
+
 // }
-// setTimeout(sayHello, 1000)
-// const timeoutId = setTimeout(() => {
-//     window.alert("hello2")
-// }, 2000);
 
-// clearTimeout(timeoutId);
+// console.timeEnd("test");
 
+function loadData() {
+    console.time("loadData");
 
-let timeoutId;
-function startTimer() {
-    timeoutId = setTimeout(() => window.alert("hello"), 3000)
-    console.log("STARTER");
+    for (let i = 0; i < 10000000; i++) {
+
+    }
+
+    console.timeEnd("loadData");
 }
 
-function clearTimer() {
-    clearTimeout(timeoutId);
-    console.log("CLEAR");
-}
+loadData();
+
+
